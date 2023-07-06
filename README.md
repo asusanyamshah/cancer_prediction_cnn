@@ -1,6 +1,6 @@
 # Cancer Prediction Using Neural Network
 
-### About the Dataset
+## About the Dataset
 
 The dataset includes breast ultrasound images. There are two types of images, one having cancer, and another without cancer. All the images have been split into training data and testing data. Training data will be used to train the model, and the testing data to test the model. 
 
@@ -14,17 +14,17 @@ The sources are trusted and valid data is used.
 
 Inside the ```train``` folder, we have two more folders named ```cancer``` and ```normal```. The ```cancer``` folder contains images of breast ultrasound showing cancer, both benign and malignant. The ```normal``` folder contains normal breast ultrasound images with no cancer. This structure is similar for the ```test``` folder. 
 
-### Model.ipynb
+## Model.ipynb
 
 A Convolutional Neural Network is made which can be trained and then used to make some predictions. Libraries named tensorflow and keras are used for making the model and image manipulation. 
 
 The following steps were taken to make the model and train it. 
 
-1. Data Augmentation: Data Augmentation is the generation of new data from already existing data using certain parameters to specify how the new data must be generated. This increases the size of training data and provides the Neural Network more data to work with and learn from, which increases its accuracy. 
+##### 1. Data Augmentation: Data Augmentation is the generation of new data from already existing data using certain parameters to specify how the new data must be generated. This increases the size of training data and provides the Neural Network more data to work with and learn from, which increases its accuracy. 
 
-New Data was generated using ImageDataGenerator Class, and parameters like ```shear_range```, ```zoom_range```, and ```horizontal_flip``` were used to specify the data to be created. 
+##### New Data was generated using ImageDataGenerator Class, and parameters like ```shear_range```, ```zoom_range```, and ```horizontal_flip``` were used to specify the data to be created. 
 
-2. Adding the Layers of the Neural Network. We determine the Architecture of neural network.
+##### 2. Adding the Layers of the Neural Network. We determine the Architecture of neural network.
 
     1. The CNN is instantiated as s Sequential model using the command ```cnn = tf.keras.models.Sequential()```. 
     We add a 2D convolution layer. The layer contains filters, which slides across the input image, performing a mathematical operation named colvolution and gives an output. These filters are responsible for detecting specific images of an image like corners, edges, and a lot more. After the convolution operation, an activation function is applied to the output. The filters are small matrices.
@@ -46,14 +46,19 @@ New Data was generated using ImageDataGenerator Class, and parameters like ```sh
 
 Now the structure of the neural network is made. 
 
-3. An optimizer is made. The optimizer named ```Adam``` is used and the learning rate is ```0.001```. The function of the optimizer is to update the weights to get better accuracy. They reduce the loss. 
+##### 3. An optimizer is made. The optimizer named ```Adam``` is used and the learning rate is ```0.001```. The function of the optimizer is to update the weights to get better accuracy. They reduce the loss. 
 
-4. Compiling the model. The entire model is then compiled. The optimizer is specified. The loss is calculated using the binary_crossentropy function because we are dealing with binary classification. The loss is a way to determine the accuracy of the model. The loss determines the difference between the predicted value and the true value. 
+##### 4. Compiling the model. The entire model is then compiled. The optimizer is specified. The loss is calculated using the binary_crossentropy function because we are dealing with binary classification. The loss is a way to determine the accuracy of the model. The loss determines the difference between the predicted value and the true value. 
 
-5. Early Stopping. Early Stopping is a method used to prevent overfitting and stop the training of the model when the model stopped performing well while training. Here, we monitor the ```val_loss``` or validation loss and the ```patience = 5``` states the number of epochs to wait before stopping the model if ```val_loss``` dosent improve 
+##### 5. Early Stopping. Early Stopping is a method used to prevent overfitting and stop the training of the model when the model stopped performing well while training. Here, we monitor the ```val_loss``` or validation loss and the ```patience = 5``` states the number of epochs to wait before stopping the model if ```val_loss``` dosent improve 
 
-5. Training the model. We then finally train the model by providing it with the training data, testing data or validation data, specifying the number of epochs and providing it the Early Stopping callback. 
+##### 6. Training the model. We then finally train the model by providing it with the training data, testing data or validation data, specifying the number of epochs and providing it the Early Stopping callback. 
 
-6. Saving the model. After the traing process is done, we save the trained model using ```tf.keras.models.save_model(cnn, './')```. This saves the model in the current directory. We can use this model in the future without having to train it again. 
+##### 6. Saving the model. After the traing process is done, we save the trained model using ```tf.keras.models.save_model(cnn, './')```. This saves the model in the current directory. We can use this model in the future without having to train it again. 
 
-### Script.ipynb
+## Script.ipynb
+
+This program is responsible for taking the images from the user as input and using the trained model to give a prediction. 
+
+First, some libraries are imported that can load the saved model and manipulate the data to make it fit for the model to take as input. The for library for loading the model is ```tensorflow```. The libraries for data manipulation is ```numpy``` and ```keras```. We first load the saved model using ```model = tf.keras.models.load_model('./')``` and save the model in a variable named ```model```. This code loads the saved model from the current directory and stores it in a variable named ```model```. Then the path of the image which is to be predicted is taken in using input. After the user provides the input, the image is then loaded using the image funciton of keras library, and the ```target_size``` is set to ```(256, 256)``` which is the size the model can take as an input. This is then stored in a variable named ```image_to_predict```
+The image is then converted into an array using the numpy function ```img_to_array```, and the array is stored in a variable named ```image_to_predict```. The shape of the array is then expanded using ```np.expand_dims('img_toarray', axis = 0)```. The rescaling of the image is then done using ```image_to_predict = image_to_predict / 255.0```. Now the image is transformed into a form that the model can take as an input. Now the prediction from the model can be taken using ```result = model.predict(test_image)```. The result is in form of a 2D Array. The result is then converted into a user friendly output and provided to the user. 
