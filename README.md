@@ -46,15 +46,20 @@ The following steps were taken to make the model and train it.
 
 Now the structure of the neural network is made. 
 
-##### 3. An optimizer is made. The optimizer named ```Adam``` is used and the learning rate is ```0.001```. The function of the optimizer is to update the weights to get better accuracy. They reduce the loss. 
+##### 3. An optimizer is made.
+            The optimizer named ```Adam``` is used and the learning rate is ```0.001```. The function of the optimizer is to update the weights to get better accuracy. They reduce the loss. 
 
-##### 4. Compiling the model. The entire model is then compiled. The optimizer is specified. The loss is calculated using the binary_crossentropy function because we are dealing with binary classification. The loss is a way to determine the accuracy of the model. The loss determines the difference between the predicted value and the true value. 
+##### 4. Compiling the model. 
+            The entire model is then compiled. The optimizer is specified. The loss is calculated using the binary_crossentropy function because we are dealing with binary classification. The loss is a way to determine the accuracy of the model. The loss determines the difference between the predicted value and the true value. 
 
-##### 5. Early Stopping. Early Stopping is a method used to prevent overfitting and stop the training of the model when the model stopped performing well while training. Here, we monitor the ```val_loss``` or validation loss and the ```patience = 5``` states the number of epochs to wait before stopping the model if ```val_loss``` dosent improve 
+##### 5. Early Stopping. 
+            Early Stopping is a method used to prevent overfitting and stop the training of the model when the model stopped performing well while training. Here, we monitor the ```val_loss``` or validation loss and the ```patience = 5``` states the number of epochs to wait before stopping the model if ```val_loss``` dosent improve 
 
-##### 6. Training the model. We then finally train the model by providing it with the training data, testing data or validation data, specifying the number of epochs and providing it the Early Stopping callback. 
+##### 6. Training the model. 
+            We then finally train the model by providing it with the training data, testing data or validation data, specifying the number of epochs and providing it the Early Stopping callback. 
 
-##### 6. Saving the model. After the traing process is done, we save the trained model using ```tf.keras.models.save_model(cnn, './')```. This saves the model in the current directory. We can use this model in the future without having to train it again. 
+##### 6. Saving the model. 
+            After the traing process is done, we save the trained model using ```tf.keras.models.save_model(cnn, './')```. This saves the model in the current directory. We can use this model in the future without having to train it again. 
 
 ## Script.ipynb
 
