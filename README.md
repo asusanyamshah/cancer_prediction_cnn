@@ -26,18 +26,18 @@ Inside the ```train``` folder, there are two more folders named ```cancer``` and
 
 There are 1007 in the ```train``` folder, and 538 images in the ```test``` folder
 
-## Making the Model: odel.ipynb
+## Making the Model: model.ipynb
 
 A Convolutional Neural Network was made which was trained and then used to make some predictions. Libraries named tensorflow and keras were used for making the model and image manipulation. 
 
 The following steps were taken to make the model and train it. 
 
-##### 1. Data Augmentation: 
+### 1. Data Augmentation: 
 Data Augmentation is the generation of new data from already existing data using certain parameters to specify how the new data must be generated. This increases the size of training data and provides the Neural Network more data to work with and learn from, which increases its accuracy. 
 
 New Data was generated using ```ImageDataGenerator``` Class, and parameters like ```shear_range```, ```zoom_range```, and ```horizontal_flip``` were used to specify the data to be created. 
 
-##### 2. Adding the Layers of the Neural Network. Determining the architecture of the neural network.
+### 2. Adding the Layers of the Neural Network. Determining the architecture of the neural network.
 
 1. The CNN is instantiated as s Sequential model using the command ```cnn = tf.keras.models.Sequential()```. 
 
@@ -60,19 +60,19 @@ There are 3 such layers with ```pool_size = 2``` and ```strides = 2```. The ```p
 
 The structure of the neural network is made. 
 
-##### 3. An optimizer is made.
+### 3. An optimizer is made.
  The optimizer named ```Adam``` was used and the learning rate used was ```0.001```. The function of the optimizer is to update the weights to get a better accuracy. They reduce the loss. 
 
-##### 4. Compiling the model. 
+### 4. Compiling the model. 
 The entire model was then compiled. The optimizer was specified. The loss was calculated using the ```binary_crossentropy``` function because the problem is of binary classification. The loss is a way to determine the accuracy of the model. The loss determines the difference between the predicted value and the true value. 
 
-##### 5. Early Stopping. 
+### 5. Early Stopping. 
 Early Stopping was a method used to prevent overfitting and stop the training of the model when the model stops performing well during training. Here, ```val_loss``` or validation loss is monitored and the ```patience = 5``` states the number of epochs to wait before stopping the model if ```val_loss``` dosent improve. 
 
-##### 6. Training the model. 
+### 6. Training the model. 
 Finally training of the model was done by providing it with the training data, testing data or the validation data, specifying the number of epochs and providing it the Early Stopping callback. 
 
-##### 7. Saving the model. 
+### 7. Saving the model. 
 After the traing process is done, The trained model is saved using ```tf.keras.models.save_model(cnn, './')```. This saves the model in the current directory. This model can be used in the future without having to train it again. 
 
 ## script.py
