@@ -1,5 +1,14 @@
 # Cancer Prediction Using Neural Network
 
+## How to Use
+You need to have python installed in your system. Download this using the site ```https://www.python.org/downloads/```
+Make sure you are in the directory of this repository
+
+1. Install the requirements: Do this using the command ```pip3 install -r requirements.txt```
+2. Run the script.py file using the command ```python3 script.py```
+3. Enter the path of the image
+4. Get the output
+
 ## About the Dataset
 
 The dataset includes breast ultrasound images. There are two types of images, one having cancer, and another without cancer. All the images have been split into training data and testing data. Training data will be used to train the model, and the testing data to test the model. 
@@ -20,9 +29,10 @@ A Convolutional Neural Network is made which can be trained and then used to mak
 
 The following steps were taken to make the model and train it. 
 
-##### 1. Data Augmentation: Data Augmentation is the generation of new data from already existing data using certain parameters to specify how the new data must be generated. This increases the size of training data and provides the Neural Network more data to work with and learn from, which increases its accuracy. 
+##### 1. Data Augmentation: 
+Data Augmentation is the generation of new data from already existing data using certain parameters to specify how the new data must be generated. This increases the size of training data and provides the Neural Network more data to work with and learn from, which increases its accuracy. 
 
-##### New Data was generated using ImageDataGenerator Class, and parameters like ```shear_range```, ```zoom_range```, and ```horizontal_flip``` were used to specify the data to be created. 
+New Data was generated using ImageDataGenerator Class, and parameters like ```shear_range```, ```zoom_range```, and ```horizontal_flip``` were used to specify the data to be created. 
 
 ##### 2. Adding the Layers of the Neural Network. We determine the Architecture of neural network.
 
@@ -61,9 +71,10 @@ We then finally train the model by providing it with the training data, testing 
 ##### 7. Saving the model. 
 After the traing process is done, we save the trained model using ```tf.keras.models.save_model(cnn, './')```. This saves the model in the current directory. We can use this model in the future without having to train it again. 
 
-## Script.ipynb
+## script.py
 
 This program is responsible for taking the images from the user as input and using the trained model to give a prediction. 
 
 First, some libraries are imported that can load the saved model and manipulate the data to make it fit for the model to take as input. The for library for loading the model is ```tensorflow```. The libraries for data manipulation is ```numpy``` and ```keras```. We first load the saved model using ```model = tf.keras.models.load_model('./')``` and save the model in a variable named ```model```. This code loads the saved model from the current directory and stores it in a variable named ```model```. Then the path of the image which is to be predicted is taken in using input. After the user provides the input, the image is then loaded using the image funciton of keras library, and the ```target_size``` is set to ```(256, 256)``` which is the size the model can take as an input. This is then stored in a variable named ```image_to_predict```
 The image is then converted into an array using the numpy function ```img_to_array```, and the array is stored in a variable named ```image_to_predict```. The shape of the array is then expanded using ```np.expand_dims('img_toarray', axis = 0)```. The rescaling of the image is then done using ```image_to_predict = image_to_predict / 255.0```. Now the image is transformed into a form that the model can take as an input. Now the prediction from the model can be taken using ```result = model.predict(test_image)```. The result is in form of a 2D Array. The result is then converted into a user friendly output and provided to the user. 
+
