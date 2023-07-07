@@ -88,7 +88,7 @@ Here is how the training of the model went, and the accuracy of the model.
 
 ![training](diagrams/training.png)
 
-The model performs at an accuracy of 94.05%. This is a good accuracy. The losses were also decreasing. 
+The model performs at an accuracy of ```94.05%```. This is a good accuracy. The losses were also decreasing. 
 
 There were only ```1007``` images in the training data, and ```538``` for the testing data. If there were more images, the accuracy of the model would improve even further. Also, with a different proportion of training and testing data, the model would reach its peak accuracy, if 94% is not. 
 
