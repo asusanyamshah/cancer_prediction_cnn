@@ -127,11 +127,7 @@ Here is an example when ```script.py``` is run and ```benign.png``` is provided 
 
 ![runningscript](diagrams/runningscript.png)
 
-#### Enter the path of the image that you want to test
-
-![testing](diagrams/testingimage.png)
-
-#### Get the output
+#### Enter the path of the image that you want to test and get the output
 
 ![output](diagrams/output.png)
 
