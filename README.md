@@ -1,9 +1,22 @@
 # Cancer Prediction Using Neural Network
 
+## Overview 
+
+The purpose of this project was to create a neural network which classifies breast ultrasound images into two categories, presenting cancer, or not presenting cancer. A neural network is an Artifical Intelligence method which replicates human brain to process data and learn from it. Since the model classifes the images into two categories, the problem was of binary classification. A Convolutional Neural Network was created for this binary classification problem. The neural network was created and data preprocessing was done using the libraries tensorflow, keras and numpy. Data Augmentation was done to increase the training set to improve the models performance. Early stopping was used to improve the models performance as well. The details of these techniques are provided below. The parameters for the neural network were determined by hyperparameter optimization. The model was trained using training data in the train folder and tested using testing data in the test folder. The trained model was then saved to be used in the future. In another file named ```script.py```, a program was written which asks the user for the input of the image, and prints out the results using the saved model.
+
+### Dependencies
+
+The libraries ```tensorflow```, ```keras```, and ```numpy``` are required for this project, and to use the ```script.py``` file. 
+
+### Input format for the images
+
+The supported images can be of variety of types including ```png```, ```jpeg``` or ```jpg```. However, the images need to be in rgb format. The target size is (256, 256). As long as this is taken care of, the model should run correctly. 
+
 ## How to Use
 You need to have python installed in your system. 
 Download python using the site ```https://www.python.org/downloads/```
-In the terminal make sure you are in the directory of this repository.
+Clone this repository. 
+Open the terminal and make sure you are in the directory of this repository.
 
 1. Install the requirements: Do this using the command ```pip3 install -r requirements.txt```
 2. Run the script.py file using the command ```python3 script.py```
@@ -99,4 +112,26 @@ Inside the folder named ```testing_images``` there are a few images of breast ul
 Here is an example when ```script.py``` is run and ```benign.png``` is provided in the path. 
 
 ![testing2](diagrams/testing2.png)
+
+# Example of using script.py
+
+Open the terminal
+
+![terminal](diagrams/terminal.png)
+
+Change directory into the directory which contains all the files of this repository using ```cd {path of the files}```
+
+![changingdirectory](diagrams/changingdirectory.png)
+
+Run ```script.py``` using ```python3 script.py```
+
+![runningscript](runningscript.png)
+
+Enter the path of the image that you want to test
+
+![testing](testingimage.png)
+
+Get the output
+
+![output](output.png)
 
