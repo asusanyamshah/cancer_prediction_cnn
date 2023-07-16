@@ -125,13 +125,13 @@ Here is an example when ```script.py``` is run and ```benign.png``` is provided 
 
 #### Run ```script.py``` using ```python3 script.py```
 
-![runningscript](runningscript.png)
+![runningscript](diagrams/runningscript.png)
 
 #### Enter the path of the image that you want to test
 
-![testing](testingimage.png)
+![testing](diagrams/testingimage.png)
 
 #### Get the output
 
-![output](output.png)
+![output](diagrams/output.png)
 
