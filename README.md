@@ -115,23 +115,23 @@ Here is an example when ```script.py``` is run and ```benign.png``` is provided 
 
 # Example of using script.py
 
-Open the terminal
+#### Open the terminal
 
 ![terminal](diagrams/terminal.png)
 
-Change directory into the directory which contains all the files of this repository using ```cd {path of the files}```
+#### Change directory into the directory which contains all the files of this repository using ```cd {path of the files}```
 
 ![changingdirectory](diagrams/changingdirectory.png)
 
-Run ```script.py``` using ```python3 script.py```
+#### Run ```script.py``` using ```python3 script.py```
 
 ![runningscript](runningscript.png)
 
-Enter the path of the image that you want to test
+#### Enter the path of the image that you want to test
 
 ![testing](testingimage.png)
 
-Get the output
+#### Get the output
 
 ![output](output.png)
 
