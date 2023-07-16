@@ -10,7 +10,7 @@ The libraries ```tensorflow```, ```keras```, and ```numpy``` are required for th
 
 ### Input format for the images
 
-The supported images can be of variety of types including ```png```, ```jpeg``` or ```jpg```. However, the images need to be in rgb format. The target size is (256, 256). As long as this is taken care of, the model should run correctly. 
+The supported images can be of variety of types including ```png```, ```jpeg``` or ```jpg```. However, the images need to be in rgb format. The target size is ```(256, 256)```. As long as this is taken care of, the model should run correctly. 
 
 ## How to Use
 You need to have python installed in your system. 
@@ -52,16 +52,10 @@ New Data was generated using ```ImageDataGenerator``` Class, and parameters like
 
 ### 2. Adding the Layers of the Neural Network. Determining the architecture of the neural network.
 
-1. The CNN is instantiated as s Sequential model using the command ```cnn = tf.keras.models.Sequential()```. 
-
-A 2D convolution (```Conv2D```) layer was added. The layer contains filters, which slides across the input image, performing a mathematical operation named colvolution and after the computation, gives an output. These filters are responsible for detecting specific features of an image like corners, edges, and a lot more. After the convolution operation, an activation function is applied to the output. These filters are small matrices.
-
-There are 3 such layers, each with the number of ```filters``` being 32, ```kernel_size``` being 3 x 3 and the activation function being applied called ```relu```. The kernel_size refers to the dimensions of the filters or matrices. 
+1. The CNN is instantiated as s Sequential model using the command ```cnn = tf.keras.models.Sequential()```. A 2D convolution (```Conv2D```) layer was added. The layer contains filters, which slides across the input image, performing a mathematical operation named colvolution and after the computation, gives an output. These filters are responsible for detecting specific features of an image like corners, edges, and a lot more. After the convolution operation, an activation function is applied to the output. These filters are small matrices. There are 3 such layers, each with the number of ```filters``` being 32, ```kernel_size``` being 3 x 3 and the activation function being applied called ```relu```. The kernel_size refers to the dimensions of the filters or matrices. 
 
 
-2. Max Pooling Layers. This layer extracts important features from the input. The ```MaxPool2D``` layer takes as input a feature map obtained from the convolution layer. The layer then performs an operation to select the maximum value in each patch of the feature map obtained from the convolution layer. This layer helps in dimensionality reduction and it reduces the spatial dimensions. This leads to more efficient models because it helps focus on the important features only. 
-
-There are 3 such layers with ```pool_size = 2``` and ```strides = 2```. The ```pool_size``` refers to a tuple of two integers which states the dimensions of the pooling windows. ```strides``` determines the number of steps used when moving the pooling window across the input. 
+2. Max Pooling Layers. This layer extracts important features from the input. The ```MaxPool2D``` layer takes as input a feature map obtained from the convolution layer. The layer then performs an operation to select the maximum value in each patch of the feature map obtained from the convolution layer. This layer helps in dimensionality reduction and it reduces the spatial dimensions. This leads to more efficient models because it helps focus on the important features only.  There are 3 such layers with ```pool_size = 2``` and ```strides = 2```. The ```pool_size``` refers to a tuple of two integers which states the dimensions of the pooling windows. ```strides``` determines the number of steps used when moving the pooling window across the input. 
 
 3. Flatten Layer. This layer converts the multidimensional input it gets from all the layers into a one dimensional vector. There is one such layer. 
 
@@ -115,19 +109,19 @@ Here is an example when ```script.py``` is run and ```benign.png``` is provided 
 
 # Example of using script.py
 
-#### Open the terminal
+### Open the terminal
 
 ![terminal](diagrams/terminal.png)
 
-#### Change directory into the directory which contains all the files of this repository using ```cd {path of the files}```
+### Change directory into the directory which contains all the files of this repository using ```cd {path of the files}```
 
 ![changingdirectory](diagrams/changingdirectory.png)
 
-#### Run ```script.py``` using ```python3 script.py```
+### Run ```script.py``` using ```python3 script.py```
 
 ![runningscript](diagrams/runningscript.png)
 
-#### Enter the path of the image that you want to test and get the output
+### Enter the path of the image that you want to test and get the output
 
 ![output](diagrams/output.png)
 
